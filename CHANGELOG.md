@@ -66,7 +66,7 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Project format migrations (`soundbit-formats/src/migrations/`).
 - Logo and brand assets (`assets/brand/`): an eighth note dissolving into pixels, in Game Boy
   greens; new desktop app icons and favicon.
-- Example songs `clash-of-banners` (orchestral battle theme) and `da-dada` (chiptune song).
+- Example songs `clash-of-banners` (orchestral battle theme) and `pixel-sunrise` (upbeat title-screen theme).
 - Community files: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`,
   `THIRD_PARTY_NOTICES.md`, issue and pull request templates.
 

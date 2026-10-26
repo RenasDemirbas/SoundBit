@@ -3,9 +3,9 @@
   "format_version": 2,
   "song": {
     "meta": {
-      "title": "Da daDA",
+      "title": "Pixel Sunrise",
       "author": "SoundBit contributors",
-      "description": "Bright chiptune song built on the motif 'da daDA da daDA da, na NaNana nananananana'."
+      "description": "Upbeat chiptune title-screen theme in D major: pulse lead hook, harmony, arpeggios, strings, a flute bridge, triangle bass and drums."
     },
     "timing": {
       "bpm": 128,
@@ -383,6 +383,494 @@
     "patterns": [
       {
         "id": 1,
+        "name": "Hook 1",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 69,
+            "start": 0,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 3,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 78,
+            "start": 4,
+            "length": 2,
+            "velocity": 118
+          },
+          {
+            "pitch": 76,
+            "start": 6,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 9,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 81,
+            "start": 10,
+            "length": 2,
+            "velocity": 118
+          },
+          {
+            "pitch": 78,
+            "start": 12,
+            "length": 4,
+            "velocity": 92
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Hook 2",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 76,
+            "start": 0,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 78,
+            "start": 3,
+            "length": 1,
+            "velocity": 118
+          },
+          {
+            "pitch": 76,
+            "start": 4,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 5,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 71,
+            "start": 8,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 73,
+            "start": 9,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 10,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 76,
+            "start": 11,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 78,
+            "start": 12,
+            "length": 1,
+            "velocity": 118
+          },
+          {
+            "pitch": 76,
+            "start": 13,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 14,
+            "length": 2,
+            "velocity": 92
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Hook 3",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 71,
+            "start": 0,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 3,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 79,
+            "start": 4,
+            "length": 2,
+            "velocity": 118
+          },
+          {
+            "pitch": 78,
+            "start": 6,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 76,
+            "start": 9,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 83,
+            "start": 10,
+            "length": 2,
+            "velocity": 118
+          },
+          {
+            "pitch": 79,
+            "start": 12,
+            "length": 4,
+            "velocity": 92
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Hook 4",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 78,
+            "start": 0,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 79,
+            "start": 3,
+            "length": 1,
+            "velocity": 118
+          },
+          {
+            "pitch": 78,
+            "start": 4,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 76,
+            "start": 5,
+            "length": 2,
+            "velocity": 92
+          },
+          {
+            "pitch": 69,
+            "start": 8,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 71,
+            "start": 9,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 73,
+            "start": 10,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 74,
+            "start": 11,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 76,
+            "start": 12,
+            "length": 1,
+            "velocity": 118
+          },
+          {
+            "pitch": 78,
+            "start": 13,
+            "length": 1,
+            "velocity": 92
+          },
+          {
+            "pitch": 76,
+            "start": 14,
+            "length": 2,
+            "velocity": 92
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Harmony 1",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 66,
+            "start": 0,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 3,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 74,
+            "start": 4,
+            "length": 2,
+            "velocity": 108
+          },
+          {
+            "pitch": 73,
+            "start": 6,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 9,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 78,
+            "start": 10,
+            "length": 2,
+            "velocity": 108
+          },
+          {
+            "pitch": 74,
+            "start": 12,
+            "length": 4,
+            "velocity": 82
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Harmony 2",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 73,
+            "start": 0,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 74,
+            "start": 3,
+            "length": 1,
+            "velocity": 108
+          },
+          {
+            "pitch": 73,
+            "start": 4,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 5,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 67,
+            "start": 8,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 69,
+            "start": 9,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 10,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 73,
+            "start": 11,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 74,
+            "start": 12,
+            "length": 1,
+            "velocity": 108
+          },
+          {
+            "pitch": 73,
+            "start": 13,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 14,
+            "length": 2,
+            "velocity": 82
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Harmony 3",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 67,
+            "start": 0,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 3,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 76,
+            "start": 4,
+            "length": 2,
+            "velocity": 108
+          },
+          {
+            "pitch": 74,
+            "start": 6,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 73,
+            "start": 9,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 79,
+            "start": 10,
+            "length": 2,
+            "velocity": 108
+          },
+          {
+            "pitch": 76,
+            "start": 12,
+            "length": 4,
+            "velocity": 82
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Harmony 4",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 74,
+            "start": 0,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 76,
+            "start": 3,
+            "length": 1,
+            "velocity": 108
+          },
+          {
+            "pitch": 74,
+            "start": 4,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 73,
+            "start": 5,
+            "length": 2,
+            "velocity": 82
+          },
+          {
+            "pitch": 66,
+            "start": 8,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 67,
+            "start": 9,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 69,
+            "start": 10,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 71,
+            "start": 11,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 73,
+            "start": 12,
+            "length": 1,
+            "velocity": 108
+          },
+          {
+            "pitch": 74,
+            "start": 13,
+            "length": 1,
+            "velocity": 82
+          },
+          {
+            "pitch": 73,
+            "start": 14,
+            "length": 2,
+            "velocity": 82
+          }
+        ]
+      },
+      {
+        "id": 9,
         "name": "Bass D",
         "instrument": 6,
         "notes": [
@@ -437,7 +925,7 @@
         ]
       },
       {
-        "id": 2,
+        "id": 10,
         "name": "Arp D",
         "instrument": 3,
         "notes": [
@@ -540,7 +1028,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": 11,
         "name": "Strings D",
         "instrument": 4,
         "notes": [
@@ -565,7 +1053,7 @@
         ]
       },
       {
-        "id": 4,
+        "id": 12,
         "name": "Bass Bm",
         "instrument": 6,
         "notes": [
@@ -620,7 +1108,7 @@
         ]
       },
       {
-        "id": 5,
+        "id": 13,
         "name": "Arp Bm",
         "instrument": 3,
         "notes": [
@@ -723,7 +1211,7 @@
         ]
       },
       {
-        "id": 6,
+        "id": 14,
         "name": "Strings Bm",
         "instrument": 4,
         "notes": [
@@ -748,7 +1236,7 @@
         ]
       },
       {
-        "id": 7,
+        "id": 15,
         "name": "Bass G",
         "instrument": 6,
         "notes": [
@@ -803,7 +1291,7 @@
         ]
       },
       {
-        "id": 8,
+        "id": 16,
         "name": "Arp G",
         "instrument": 3,
         "notes": [
@@ -906,7 +1394,7 @@
         ]
       },
       {
-        "id": 9,
+        "id": 17,
         "name": "Strings G",
         "instrument": 4,
         "notes": [
@@ -931,7 +1419,7 @@
         ]
       },
       {
-        "id": 10,
+        "id": 18,
         "name": "Bass A",
         "instrument": 6,
         "notes": [
@@ -986,7 +1474,7 @@
         ]
       },
       {
-        "id": 11,
+        "id": 19,
         "name": "Arp A",
         "instrument": 3,
         "notes": [
@@ -1089,7 +1577,7 @@
         ]
       },
       {
-        "id": 12,
+        "id": 20,
         "name": "Strings A",
         "instrument": 4,
         "notes": [
@@ -1114,7 +1602,7 @@
         ]
       },
       {
-        "id": 13,
+        "id": 21,
         "name": "Bass Em",
         "instrument": 6,
         "notes": [
@@ -1169,7 +1657,7 @@
         ]
       },
       {
-        "id": 14,
+        "id": 22,
         "name": "Arp Em",
         "instrument": 3,
         "notes": [
@@ -1272,7 +1760,7 @@
         ]
       },
       {
-        "id": 15,
+        "id": 23,
         "name": "Strings Em",
         "instrument": 4,
         "notes": [
@@ -1293,494 +1781,6 @@
             "start": 0,
             "length": 16,
             "velocity": 85
-          }
-        ]
-      },
-      {
-        "id": 16,
-        "name": "Motif 1",
-        "instrument": 1,
-        "notes": [
-          {
-            "pitch": 69,
-            "start": 0,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 3,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 78,
-            "start": 4,
-            "length": 2,
-            "velocity": 118
-          },
-          {
-            "pitch": 76,
-            "start": 6,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 9,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 81,
-            "start": 10,
-            "length": 2,
-            "velocity": 118
-          },
-          {
-            "pitch": 78,
-            "start": 12,
-            "length": 4,
-            "velocity": 92
-          }
-        ]
-      },
-      {
-        "id": 17,
-        "name": "Harmony 1",
-        "instrument": 2,
-        "notes": [
-          {
-            "pitch": 66,
-            "start": 0,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 3,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 74,
-            "start": 4,
-            "length": 2,
-            "velocity": 108
-          },
-          {
-            "pitch": 73,
-            "start": 6,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 9,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 78,
-            "start": 10,
-            "length": 2,
-            "velocity": 108
-          },
-          {
-            "pitch": 74,
-            "start": 12,
-            "length": 4,
-            "velocity": 82
-          }
-        ]
-      },
-      {
-        "id": 18,
-        "name": "Motif 2",
-        "instrument": 1,
-        "notes": [
-          {
-            "pitch": 76,
-            "start": 0,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 78,
-            "start": 3,
-            "length": 1,
-            "velocity": 118
-          },
-          {
-            "pitch": 76,
-            "start": 4,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 5,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 71,
-            "start": 8,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 73,
-            "start": 9,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 10,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 76,
-            "start": 11,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 78,
-            "start": 12,
-            "length": 1,
-            "velocity": 118
-          },
-          {
-            "pitch": 76,
-            "start": 13,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 14,
-            "length": 2,
-            "velocity": 92
-          }
-        ]
-      },
-      {
-        "id": 19,
-        "name": "Harmony 2",
-        "instrument": 2,
-        "notes": [
-          {
-            "pitch": 73,
-            "start": 0,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 74,
-            "start": 3,
-            "length": 1,
-            "velocity": 108
-          },
-          {
-            "pitch": 73,
-            "start": 4,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 5,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 67,
-            "start": 8,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 69,
-            "start": 9,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 10,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 73,
-            "start": 11,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 74,
-            "start": 12,
-            "length": 1,
-            "velocity": 108
-          },
-          {
-            "pitch": 73,
-            "start": 13,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 14,
-            "length": 2,
-            "velocity": 82
-          }
-        ]
-      },
-      {
-        "id": 20,
-        "name": "Motif 3",
-        "instrument": 1,
-        "notes": [
-          {
-            "pitch": 71,
-            "start": 0,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 3,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 79,
-            "start": 4,
-            "length": 2,
-            "velocity": 118
-          },
-          {
-            "pitch": 78,
-            "start": 6,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 76,
-            "start": 9,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 83,
-            "start": 10,
-            "length": 2,
-            "velocity": 118
-          },
-          {
-            "pitch": 79,
-            "start": 12,
-            "length": 4,
-            "velocity": 92
-          }
-        ]
-      },
-      {
-        "id": 21,
-        "name": "Harmony 3",
-        "instrument": 2,
-        "notes": [
-          {
-            "pitch": 67,
-            "start": 0,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 3,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 76,
-            "start": 4,
-            "length": 2,
-            "velocity": 108
-          },
-          {
-            "pitch": 74,
-            "start": 6,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 73,
-            "start": 9,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 79,
-            "start": 10,
-            "length": 2,
-            "velocity": 108
-          },
-          {
-            "pitch": 76,
-            "start": 12,
-            "length": 4,
-            "velocity": 82
-          }
-        ]
-      },
-      {
-        "id": 22,
-        "name": "Motif 4",
-        "instrument": 1,
-        "notes": [
-          {
-            "pitch": 78,
-            "start": 0,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 79,
-            "start": 3,
-            "length": 1,
-            "velocity": 118
-          },
-          {
-            "pitch": 78,
-            "start": 4,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 76,
-            "start": 5,
-            "length": 2,
-            "velocity": 92
-          },
-          {
-            "pitch": 69,
-            "start": 8,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 71,
-            "start": 9,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 73,
-            "start": 10,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 74,
-            "start": 11,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 76,
-            "start": 12,
-            "length": 1,
-            "velocity": 118
-          },
-          {
-            "pitch": 78,
-            "start": 13,
-            "length": 1,
-            "velocity": 92
-          },
-          {
-            "pitch": 76,
-            "start": 14,
-            "length": 2,
-            "velocity": 92
-          }
-        ]
-      },
-      {
-        "id": 23,
-        "name": "Harmony 4",
-        "instrument": 2,
-        "notes": [
-          {
-            "pitch": 74,
-            "start": 0,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 76,
-            "start": 3,
-            "length": 1,
-            "velocity": 108
-          },
-          {
-            "pitch": 74,
-            "start": 4,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 73,
-            "start": 5,
-            "length": 2,
-            "velocity": 82
-          },
-          {
-            "pitch": 66,
-            "start": 8,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 67,
-            "start": 9,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 69,
-            "start": 10,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 71,
-            "start": 11,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 73,
-            "start": 12,
-            "length": 1,
-            "velocity": 108
-          },
-          {
-            "pitch": 74,
-            "start": 13,
-            "length": 1,
-            "velocity": 82
-          },
-          {
-            "pitch": 73,
-            "start": 14,
-            "length": 2,
-            "velocity": 82
           }
         ]
       },
@@ -2195,67 +2195,67 @@
         "clips": [
           {
             "bar": 4,
-            "pattern": 16
+            "pattern": 1
           },
           {
             "bar": 5,
-            "pattern": 18
+            "pattern": 2
           },
           {
             "bar": 6,
-            "pattern": 20
+            "pattern": 3
           },
           {
             "bar": 7,
-            "pattern": 22
+            "pattern": 4
           },
           {
             "bar": 8,
-            "pattern": 16
+            "pattern": 1
           },
           {
             "bar": 9,
-            "pattern": 18
+            "pattern": 2
           },
           {
             "bar": 10,
-            "pattern": 20
+            "pattern": 3
           },
           {
             "bar": 11,
-            "pattern": 22
+            "pattern": 4
           },
           {
             "bar": 16,
-            "pattern": 16
+            "pattern": 1
           },
           {
             "bar": 17,
-            "pattern": 18
+            "pattern": 2
           },
           {
             "bar": 18,
-            "pattern": 20
+            "pattern": 3
           },
           {
             "bar": 19,
-            "pattern": 22
+            "pattern": 4
           },
           {
             "bar": 20,
-            "pattern": 16
+            "pattern": 1
           },
           {
             "bar": 21,
-            "pattern": 18
+            "pattern": 2
           },
           {
             "bar": 22,
-            "pattern": 20
+            "pattern": 3
           },
           {
             "bar": 23,
-            "pattern": 22
+            "pattern": 4
           }
         ]
       },
@@ -2267,51 +2267,51 @@
         "clips": [
           {
             "bar": 8,
-            "pattern": 17
+            "pattern": 5
           },
           {
             "bar": 9,
-            "pattern": 19
+            "pattern": 6
           },
           {
             "bar": 10,
-            "pattern": 21
+            "pattern": 7
           },
           {
             "bar": 11,
-            "pattern": 23
+            "pattern": 8
           },
           {
             "bar": 16,
-            "pattern": 17
+            "pattern": 5
           },
           {
             "bar": 17,
-            "pattern": 19
+            "pattern": 6
           },
           {
             "bar": 18,
-            "pattern": 21
+            "pattern": 7
           },
           {
             "bar": 19,
-            "pattern": 23
+            "pattern": 8
           },
           {
             "bar": 20,
-            "pattern": 17
+            "pattern": 5
           },
           {
             "bar": 21,
-            "pattern": 19
+            "pattern": 6
           },
           {
             "bar": 22,
-            "pattern": 21
+            "pattern": 7
           },
           {
             "bar": 23,
-            "pattern": 23
+            "pattern": 8
           }
         ]
       },
@@ -2347,99 +2347,99 @@
         "clips": [
           {
             "bar": 0,
-            "pattern": 2
+            "pattern": 10
           },
           {
             "bar": 1,
-            "pattern": 5
+            "pattern": 13
           },
           {
             "bar": 2,
-            "pattern": 8
+            "pattern": 16
           },
           {
             "bar": 3,
-            "pattern": 11
+            "pattern": 19
           },
           {
             "bar": 4,
-            "pattern": 2
+            "pattern": 10
           },
           {
             "bar": 5,
-            "pattern": 5
+            "pattern": 13
           },
           {
             "bar": 6,
-            "pattern": 8
+            "pattern": 16
           },
           {
             "bar": 7,
-            "pattern": 11
+            "pattern": 19
           },
           {
             "bar": 8,
-            "pattern": 2
+            "pattern": 10
           },
           {
             "bar": 9,
-            "pattern": 5
+            "pattern": 13
           },
           {
             "bar": 10,
-            "pattern": 8
+            "pattern": 16
           },
           {
             "bar": 11,
-            "pattern": 11
+            "pattern": 19
           },
           {
             "bar": 12,
-            "pattern": 14
+            "pattern": 22
           },
           {
             "bar": 13,
-            "pattern": 8
+            "pattern": 16
           },
           {
             "bar": 14,
-            "pattern": 5
+            "pattern": 13
           },
           {
             "bar": 15,
-            "pattern": 11
+            "pattern": 19
           },
           {
             "bar": 16,
-            "pattern": 2
+            "pattern": 10
           },
           {
             "bar": 17,
-            "pattern": 5
+            "pattern": 13
           },
           {
             "bar": 18,
-            "pattern": 8
+            "pattern": 16
           },
           {
             "bar": 19,
-            "pattern": 11
+            "pattern": 19
           },
           {
             "bar": 20,
-            "pattern": 2
+            "pattern": 10
           },
           {
             "bar": 21,
-            "pattern": 5
+            "pattern": 13
           },
           {
             "bar": 22,
-            "pattern": 8
+            "pattern": 16
           },
           {
             "bar": 23,
-            "pattern": 11
+            "pattern": 19
           }
         ]
       },
@@ -2451,99 +2451,99 @@
         "clips": [
           {
             "bar": 0,
-            "pattern": 3
+            "pattern": 11
           },
           {
             "bar": 1,
-            "pattern": 6
+            "pattern": 14
           },
           {
             "bar": 2,
-            "pattern": 9
+            "pattern": 17
           },
           {
             "bar": 3,
-            "pattern": 12
+            "pattern": 20
           },
           {
             "bar": 4,
-            "pattern": 3
+            "pattern": 11
           },
           {
             "bar": 5,
-            "pattern": 6
+            "pattern": 14
           },
           {
             "bar": 6,
-            "pattern": 9
+            "pattern": 17
           },
           {
             "bar": 7,
-            "pattern": 12
+            "pattern": 20
           },
           {
             "bar": 8,
-            "pattern": 3
+            "pattern": 11
           },
           {
             "bar": 9,
-            "pattern": 6
+            "pattern": 14
           },
           {
             "bar": 10,
-            "pattern": 9
+            "pattern": 17
           },
           {
             "bar": 11,
-            "pattern": 12
+            "pattern": 20
           },
           {
             "bar": 12,
-            "pattern": 15
+            "pattern": 23
           },
           {
             "bar": 13,
-            "pattern": 9
+            "pattern": 17
           },
           {
             "bar": 14,
-            "pattern": 6
+            "pattern": 14
           },
           {
             "bar": 15,
-            "pattern": 12
+            "pattern": 20
           },
           {
             "bar": 16,
-            "pattern": 3
+            "pattern": 11
           },
           {
             "bar": 17,
-            "pattern": 6
+            "pattern": 14
           },
           {
             "bar": 18,
-            "pattern": 9
+            "pattern": 17
           },
           {
             "bar": 19,
-            "pattern": 12
+            "pattern": 20
           },
           {
             "bar": 20,
-            "pattern": 3
+            "pattern": 11
           },
           {
             "bar": 21,
-            "pattern": 6
+            "pattern": 14
           },
           {
             "bar": 22,
-            "pattern": 9
+            "pattern": 17
           },
           {
             "bar": 23,
-            "pattern": 12
+            "pattern": 20
           }
         ]
       },
@@ -2555,91 +2555,91 @@
         "clips": [
           {
             "bar": 2,
-            "pattern": 7
+            "pattern": 15
           },
           {
             "bar": 3,
-            "pattern": 10
+            "pattern": 18
           },
           {
             "bar": 4,
-            "pattern": 1
+            "pattern": 9
           },
           {
             "bar": 5,
-            "pattern": 4
+            "pattern": 12
           },
           {
             "bar": 6,
-            "pattern": 7
+            "pattern": 15
           },
           {
             "bar": 7,
-            "pattern": 10
+            "pattern": 18
           },
           {
             "bar": 8,
-            "pattern": 1
+            "pattern": 9
           },
           {
             "bar": 9,
-            "pattern": 4
+            "pattern": 12
           },
           {
             "bar": 10,
-            "pattern": 7
+            "pattern": 15
           },
           {
             "bar": 11,
-            "pattern": 10
+            "pattern": 18
           },
           {
             "bar": 12,
-            "pattern": 13
+            "pattern": 21
           },
           {
             "bar": 13,
-            "pattern": 7
+            "pattern": 15
           },
           {
             "bar": 14,
-            "pattern": 4
+            "pattern": 12
           },
           {
             "bar": 15,
-            "pattern": 10
+            "pattern": 18
           },
           {
             "bar": 16,
-            "pattern": 1
+            "pattern": 9
           },
           {
             "bar": 17,
-            "pattern": 4
+            "pattern": 12
           },
           {
             "bar": 18,
-            "pattern": 7
+            "pattern": 15
           },
           {
             "bar": 19,
-            "pattern": 10
+            "pattern": 18
           },
           {
             "bar": 20,
-            "pattern": 1
+            "pattern": 9
           },
           {
             "bar": 21,
-            "pattern": 4
+            "pattern": 12
           },
           {
             "bar": 22,
-            "pattern": 7
+            "pattern": 15
           },
           {
             "bar": 23,
-            "pattern": 10
+            "pattern": 18
           }
         ]
       },

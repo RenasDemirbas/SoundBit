@@ -87,7 +87,7 @@ headless MCP server:
 
 ```sh
 cargo install --path crates/soundbit-cli      # installs `soundbit`
-soundbit play examples/songs/da-dada.sbproj
+soundbit play examples/songs/pixel-sunrise.sbproj
 soundbit render examples/songs/clash-of-banners.sbproj -o clash.wav
 soundbit info examples/songs/first-light.sbproj
 ```
@@ -119,12 +119,13 @@ Then ask for music:
 > Make an exciting, orchestral-sounding battle theme for my game: D minor, 160 bpm, with brass,
 > strings, timpani and a loop I can play forever.
 
-> Write a happy chiptune song whose main loop goes "da daDA da daDA da, na NaNana nananananana".
+> Write an upbeat chiptune song for my game's title screen: a catchy pulse-lead hook, D major,
+> around 128 bpm, with a loop I can repeat.
 
 > Put this song on the NES profile and fix whatever it complains about.
 
 The two example songs [`clash-of-banners`](examples/songs/clash-of-banners.sbproj) and
-[`da-dada`](examples/songs/da-dada.sbproj) were composed exactly like that.
+[`pixel-sunrise`](examples/songs/pixel-sunrise.sbproj) were composed exactly like that.
 
 ## MCP tools
 
