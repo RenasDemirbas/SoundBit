@@ -7,6 +7,10 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-26
+
+First public release.
+
 ### Added
 
 - Cargo workspace skeleton with the layered crate structure from ADR 0001.
@@ -69,6 +73,9 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Example songs `clash-of-banners` (orchestral battle theme) and `pixel-sunrise` (upbeat title-screen theme).
 - Community files: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`,
   `THIRD_PARTY_NOTICES.md`, issue and pull request templates.
+- Release workflow: tagging `vX.Y.Z` builds installers for Linux (AppImage, .deb, .rpm),
+  Windows (.msi, setup .exe) and macOS (universal .dmg), plus `soundbit` command-line
+  archives, and attaches them to a draft release.
 
 ### Fixed
 
@@ -85,3 +92,6 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `pitch_envelope`, `vibrato`, `unison`, `filter` and `reverb_send_percent`; `song_update`
   accepts `reverb_size` and `reverb_damping`; `song_get` and instrument views include the new
   settings. `instrument_update` with nothing to change is now a tool error.
+
+[Unreleased]: https://github.com/RenasDemirbas/SoundBit/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/RenasDemirbas/SoundBit/releases/tag/v0.1.0

@@ -12,6 +12,7 @@ through the Model Context Protocol. Both work on the same song at the same time:
 writes appears in the editor as it happens, and every change can be undone.
 
 [![CI](https://github.com/RenasDemirbas/SoundBit/actions/workflows/ci.yml/badge.svg)](https://github.com/RenasDemirbas/SoundBit/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/RenasDemirbas/SoundBit?color=9BBC0F)](https://github.com/RenasDemirbas/SoundBit/releases/latest)
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-9BBC0F.svg)](LICENSE)
 ![Rust](https://img.shields.io/badge/Rust-stable-306230)
 ![Tauri 2](https://img.shields.io/badge/Tauri-2-306230)
@@ -63,7 +64,21 @@ writes appears in the editor as it happens, and every change can be undone.
 
 ## Install
 
-There are no prebuilt releases yet; SoundBit builds from source in a few minutes.
+Download the latest version from the
+**[releases page](https://github.com/RenasDemirbas/SoundBit/releases/latest)**:
+
+| Platform | Desktop app | Command-line tool |
+|---|---|---|
+| Windows 10 / 11 | `SoundBit_x.y.z_x64-setup.exe` or `.msi` | `soundbit-cli-…-x86_64-pc-windows-msvc.zip` |
+| macOS 11+ (Apple silicon and Intel) | `SoundBit_x.y.z_universal.dmg` | `soundbit-cli-…-aarch64-apple-darwin.tar.gz` or `…-x86_64-apple-darwin.tar.gz` |
+| Linux (x86_64) | `.AppImage`, `.deb` or `.rpm` | `soundbit-cli-…-x86_64-unknown-linux-gnu.tar.gz` |
+
+The builds are not code-signed yet. On **Windows**, SmartScreen may warn the first time: choose
+*More info → Run anyway*. On **macOS**, right-click the app and choose *Open* the first time, or
+run `xattr -dr com.apple.quarantine /Applications/SoundBit.app`.
+
+<details>
+<summary><b>Build from source</b></summary>
 
 You need a stable [Rust](https://rustup.rs) toolchain and [Node.js](https://nodejs.org) 22 or
 newer. On Linux, also install the ALSA and WebKitGTK development packages:
@@ -80,13 +95,15 @@ cd SoundBit/apps/desktop
 npm install
 npm run tauri dev          # run the desktop app
 npm run tauri build        # or build an installer for your platform
+cargo install --path ../../crates/soundbit-cli   # the `soundbit` command
 ```
+
+</details>
 
 The command-line tool renders, plays and inspects projects without the editor, and runs a
 headless MCP server:
 
 ```sh
-cargo install --path crates/soundbit-cli      # installs `soundbit`
 soundbit play examples/songs/pixel-sunrise.sbproj
 soundbit render examples/songs/clash-of-banners.sbproj -o clash.wav
 soundbit info examples/songs/first-light.sbproj

@@ -26,6 +26,13 @@
   "bundle": {
     "active": true,
     "targets": "all",
+    "publisher": "Renas Demirbas",
+    "copyright": "Copyright (C) 2026 Renas Demirbas. GPL-3.0-or-later.",
+    "category": "Music",
+    "shortDescription": "Chiptune workstation for humans and AI agents",
+    "longDescription": "SoundBit is a tracker-style editor for 8-bit and 16-bit music with a built-in MCP server, so AI agents can compose, edit and render songs in the same session you are editing.",
+    "homepage": "https://github.com/RenasDemirbas/SoundBit",
+    "license": "GPL-3.0-or-later",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
