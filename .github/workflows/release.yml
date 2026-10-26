@@ -36,11 +36,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Take the id from the create response: listing right after creating can lag behind.
           id=$(gh api "repos/$GITHUB_REPOSITORY/releases" --jq ".[] | select(.tag_name == \"$GITHUB_REF_NAME\") | .id" | head -n1)
           if [ -z "$id" ]; then
-            gh release create "$GITHUB_REF_NAME" --draft --title "SoundBit ${GITHUB_REF_NAME#v}" --notes-file notes.md
-            id=$(gh api "repos/$GITHUB_REPOSITORY/releases" --jq ".[] | select(.tag_name == \"$GITHUB_REF_NAME\") | .id" | head -n1)
+            id=$(gh api -X POST "repos/$GITHUB_REPOSITORY/releases" \
+              -f tag_name="$GITHUB_REF_NAME" -f name="SoundBit ${GITHUB_REF_NAME#v}" \
+              -F draft=true -F body=@notes.md --jq .id)
           fi
+          test -n "$id"
           echo "id=$id" >> "$GITHUB_OUTPUT"
 
   desktop:
