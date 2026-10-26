@@ -70,6 +70,11 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Community files: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`,
   `THIRD_PARTY_NOTICES.md`, issue and pull request templates.
 
+### Fixed
+
+- MCP tools show workspace paths with `/` on every platform; on Windows they used `\`, unlike
+  the paths agents write.
+
 ### Changed
 
 - SoundBit is now licensed under the GNU GPL, version 3 or later (ADR 0007), instead of

@@ -62,12 +62,15 @@ impl Workspace {
         Ok(full)
     }
 
-    /// The path relative to the workspace, for showing to agents.
+    /// The path relative to the workspace, for showing to agents. Always uses `/` between
+    /// components, so agents see the same paths they write on every platform.
     pub(crate) fn display(&self, path: &Path) -> String {
-        path.strip_prefix(&self.root)
-            .unwrap_or(path)
-            .display()
-            .to_string()
+        let relative = path.strip_prefix(&self.root).unwrap_or(path);
+        relative
+            .components()
+            .map(|component| component.as_os_str().to_string_lossy())
+            .collect::<Vec<_>>()
+            .join("/")
     }
 
     /// Project files in the workspace and its subdirectories, sorted.
@@ -113,10 +116,7 @@ mod tests {
         let (_dir, workspace) = workspace();
         let path = workspace.resolve("songs/theme", "sbproj").expect("valid");
         assert!(path.starts_with(workspace.root()));
-        assert_eq!(
-            workspace.display(&path),
-            Path::new("songs/theme.sbproj").display().to_string()
-        );
+        assert_eq!(workspace.display(&path), "songs/theme.sbproj");
         assert!(path.parent().is_some_and(Path::is_dir));
     }
 

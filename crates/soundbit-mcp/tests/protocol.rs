@@ -120,10 +120,7 @@ async fn composes_exports_saves_and_undoes() {
     );
 
     let export = ok(&client, "export_wav", json!({"path": "renders/test"})).await;
-    assert_eq!(
-        export["exported"],
-        Path::new("renders/test.wav").display().to_string()
-    );
+    assert_eq!(export["exported"], "renders/test.wav");
     assert!(dir.path().join("renders/test.wav").is_file());
 
     ok(&client, "song_save", json!({"path": "test"})).await;
