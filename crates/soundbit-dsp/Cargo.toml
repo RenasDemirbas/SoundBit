@@ -1,0 +1,12 @@
+[package]
+name = "soundbit-dsp"
+description = "Real-time safe DSP building blocks: oscillators, envelopes, filters, effects."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

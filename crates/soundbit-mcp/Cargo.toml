@@ -1,0 +1,26 @@
+[package]
+name = "soundbit-mcp"
+description = "Model Context Protocol adapter exposing SoundBit to AI agents."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+soundbit-app.workspace = true
+axum = { workspace = true, features = ["http1", "tokio"] }
+rmcp = { workspace = true, features = ["server", "transport-io", "transport-streamable-http-server", "macros"] }
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt", "macros", "io-std", "net", "sync"] }
+tokio-util.workspace = true
+
+[dev-dependencies]
+insta = { workspace = true, features = ["json"] }
+rmcp = { workspace = true, features = ["client"] }
+tempfile.workspace = true
+
+[lints]
+workspace = true

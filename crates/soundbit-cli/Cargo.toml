@@ -1,0 +1,21 @@
+[package]
+name = "soundbit-cli"
+description = "The soundbit command-line tool: headless rendering and MCP stdio server."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+soundbit-app.workspace = true
+soundbit-mcp.workspace = true
+soundbit-audio-io.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "soundbit"
+path = "src/main.rs"

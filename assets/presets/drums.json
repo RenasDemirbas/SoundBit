@@ -1,0 +1,241 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit contributors: original sound design, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "kick",
+      "category": "drums",
+      "description": "Punchy chip kick: a sine falling three octaves in 50 ms. Play C2.",
+      "instrument": {
+        "name": "Kick",
+        "voice": {
+          "type": "sine"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 220,
+          "sustain": 0,
+          "release": 30
+        },
+        "pitch_envelope": {
+          "semitones": 36,
+          "time": 50
+        },
+        "volume": 95,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "snare",
+      "category": "drums",
+      "description": "Crisp noise snare with the low end removed. Play A5.",
+      "instrument": {
+        "name": "Snare",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 150,
+          "sustain": 0,
+          "release": 40
+        },
+        "filter": {
+          "mode": "high_pass",
+          "cutoff": 900,
+          "resonance": 10,
+          "envelope_depth": 0
+        },
+        "volume": 60,
+        "pan": 0,
+        "reverb_send": 15
+      }
+    },
+    {
+      "id": "clap",
+      "category": "drums",
+      "description": "Hand clap: a short burst of band-passed noise. Play A5.",
+      "instrument": {
+        "name": "Clap",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 120,
+          "sustain": 0,
+          "release": 60
+        },
+        "filter": {
+          "mode": "band_pass",
+          "cutoff": 1500,
+          "resonance": 40,
+          "envelope_depth": 0
+        },
+        "volume": 70,
+        "pan": 0,
+        "reverb_send": 25
+      }
+    },
+    {
+      "id": "hihat_closed",
+      "category": "drums",
+      "description": "Tight closed hi-hat. Play C8.",
+      "instrument": {
+        "name": "Closed Hat",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 45,
+          "sustain": 0,
+          "release": 20
+        },
+        "filter": {
+          "mode": "high_pass",
+          "cutoff": 6000,
+          "resonance": 0,
+          "envelope_depth": 0
+        },
+        "volume": 45,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "hihat_open",
+      "category": "drums",
+      "description": "Sizzling open hi-hat. Play C8.",
+      "instrument": {
+        "name": "Open Hat",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 320,
+          "sustain": 0,
+          "release": 120
+        },
+        "filter": {
+          "mode": "high_pass",
+          "cutoff": 5000,
+          "resonance": 0,
+          "envelope_depth": 0
+        },
+        "volume": 40,
+        "pan": 0,
+        "reverb_send": 10
+      }
+    },
+    {
+      "id": "tom",
+      "category": "drums",
+      "description": "Deep tom with a falling pitch. Play C3 to C4 for fills.",
+      "instrument": {
+        "name": "Tom",
+        "voice": {
+          "type": "sine"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 320,
+          "sustain": 0,
+          "release": 60
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 120
+        },
+        "volume": 85,
+        "pan": 0,
+        "reverb_send": 20
+      }
+    },
+    {
+      "id": "taiko",
+      "category": "drums",
+      "description": "Huge war drum: a low sine with a slow pitch drop and a long room. Play C2.",
+      "instrument": {
+        "name": "Taiko",
+        "voice": {
+          "type": "sine"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 600,
+          "sustain": 0,
+          "release": 200
+        },
+        "pitch_envelope": {
+          "semitones": 14,
+          "time": 110
+        },
+        "volume": 95,
+        "pan": 0,
+        "reverb_send": 45
+      }
+    },
+    {
+      "id": "crash",
+      "category": "drums",
+      "description": "Crash cymbal: long, bright noise. Play C8.",
+      "instrument": {
+        "name": "Crash",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 1500,
+          "sustain": 0,
+          "release": 600
+        },
+        "filter": {
+          "mode": "high_pass",
+          "cutoff": 3500,
+          "resonance": 0,
+          "envelope_depth": 0
+        },
+        "volume": 35,
+        "pan": 0,
+        "reverb_send": 30
+      }
+    },
+    {
+      "id": "metal_hit",
+      "category": "drums",
+      "description": "Metallic clank from the short noise mode, for industrial grooves. Play C6.",
+      "instrument": {
+        "name": "Metal",
+        "voice": {
+          "type": "noise",
+          "mode": "short"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 180,
+          "sustain": 0,
+          "release": 60
+        },
+        "filter": {
+          "mode": "band_pass",
+          "cutoff": 2500,
+          "resonance": 50,
+          "envelope_depth": 0
+        },
+        "volume": 50,
+        "pan": 0,
+        "reverb_send": 20
+      }
+    }
+  ]
+}

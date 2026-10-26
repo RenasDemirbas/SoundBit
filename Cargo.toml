@@ -1,0 +1,61 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "apps/desktop/src-tauri", "xtask"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+publish = false
+
+[workspace.dependencies]
+# Internal crates. The allowed dependency graph is enforced by `cargo xtask check-deps`.
+soundbit-core = { path = "crates/soundbit-core", version = "0.1.0" }
+soundbit-dsp = { path = "crates/soundbit-dsp", version = "0.1.0" }
+soundbit-engine = { path = "crates/soundbit-engine", version = "0.1.0" }
+soundbit-audio-io = { path = "crates/soundbit-audio-io", version = "0.1.0" }
+soundbit-formats = { path = "crates/soundbit-formats", version = "0.1.0" }
+soundbit-app = { path = "crates/soundbit-app", version = "0.1.0" }
+soundbit-mcp = { path = "crates/soundbit-mcp", version = "0.1.0" }
+
+# External crates shared across the workspace.
+serde = { version = "1.0.229", features = ["derive"] }
+thiserror = "2.0.21"
+serde_json = "1.0.154"
+tauri = "2.12.5"
+tauri-build = "2.7.4"
+tauri-plugin-dialog = "2.8.3"
+proptest = "1.12.0"
+rtrb = "0.4.1"
+tempfile = "3.27.0"
+anyhow = "1.0.104"
+axum = { version = "0.8.9", default-features = false }
+clap = { version = "4.6.7", features = ["derive"] }
+cpal = "0.18.2"
+insta = "1.49.0"
+rmcp = { version = "3.7.0", default-features = false }
+schemars = "1.2.3"
+tokio = { version = "1.54.1", default-features = false }
+tokio-util = "0.7.20"
+
+[workspace.lints.rust]
+# Denied (not forbidden) so `dsp` and `audio-io` can allow it locally with a SAFETY comment.
+# Every other crate adds `#![forbid(unsafe_code)]`.
+unsafe_code = "deny"
+missing_docs = "warn"
+unreachable_pub = "warn"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+# Accessors and constructors are everywhere; marking each one #[must_use] adds noise.
+must_use_candidate = "allow"
+unwrap_used = "warn"
+expect_used = "warn"
+dbg_macro = "warn"
+todo = "warn"
+unimplemented = "warn"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

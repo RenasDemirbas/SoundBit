@@ -1,0 +1,1275 @@
+{
+  "format": "soundbit-project",
+  "format_version": 1,
+  "song": {
+    "meta": {
+      "title": "First Light",
+      "author": "SoundBit contributors",
+      "description": "NES-style demo: Am-F-C-G with melody, arpeggio, triangle bass and noise drums."
+    },
+    "timing": {
+      "bpm": 140,
+      "steps_per_beat": 4,
+      "beats_per_bar": 4,
+      "swing": 0
+    },
+    "scale": {
+      "root": 9,
+      "kind": "natural_minor"
+    },
+    "chip_profile": "nes",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "Lead",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 160,
+          "sustain": 60,
+          "release": 70
+        },
+        "volume": 70,
+        "pan": 0
+      },
+      {
+        "id": 2,
+        "name": "Arp",
+        "voice": {
+          "type": "pulse",
+          "duty": "eighth"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 70,
+          "sustain": 25,
+          "release": 30
+        },
+        "volume": 40,
+        "pan": -25
+      },
+      {
+        "id": 3,
+        "name": "Bass",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 0,
+          "sustain": 100,
+          "release": 25
+        },
+        "volume": 95,
+        "pan": 0
+      },
+      {
+        "id": 4,
+        "name": "Drums",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 110,
+          "sustain": 0,
+          "release": 15
+        },
+        "volume": 75,
+        "pan": 0
+      }
+    ],
+    "patterns": [
+      {
+        "id": 1,
+        "name": "Melody 1",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 76,
+            "start": 0,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 74,
+            "start": 3,
+            "length": 1,
+            "velocity": 110
+          },
+          {
+            "pitch": 72,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 74,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 76,
+            "start": 8,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 81,
+            "start": 12,
+            "length": 4,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Melody 2",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 79,
+            "start": 0,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 77,
+            "start": 2,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 76,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 72,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 77,
+            "start": 8,
+            "length": 6,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Melody 3",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 76,
+            "start": 0,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 79,
+            "start": 2,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 84,
+            "start": 4,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 83,
+            "start": 8,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 79,
+            "start": 10,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 76,
+            "start": 12,
+            "length": 4,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Melody 4",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 74,
+            "start": 0,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 79,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 83,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 86,
+            "start": 8,
+            "length": 6,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Melody 5",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 81,
+            "start": 0,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 84,
+            "start": 2,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 83,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 81,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 76,
+            "start": 8,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 72,
+            "start": 12,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 76,
+            "start": 14,
+            "length": 2,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Melody 6",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 77,
+            "start": 0,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 81,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 84,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 81,
+            "start": 8,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 77,
+            "start": 12,
+            "length": 4,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Melody 7",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 79,
+            "start": 0,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 76,
+            "start": 2,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 79,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 84,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 88,
+            "start": 8,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 86,
+            "start": 12,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 84,
+            "start": 14,
+            "length": 2,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Melody 8",
+        "instrument": 1,
+        "notes": [
+          {
+            "pitch": 83,
+            "start": 0,
+            "length": 4,
+            "velocity": 110
+          },
+          {
+            "pitch": 81,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 79,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 81,
+            "start": 8,
+            "length": 8,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Arp Am",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 69,
+            "start": 0,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 1,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 76,
+            "start": 2,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 81,
+            "start": 3,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 4,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 5,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 76,
+            "start": 6,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 81,
+            "start": 7,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 8,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 9,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 76,
+            "start": 10,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 81,
+            "start": 11,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 12,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 13,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 76,
+            "start": 14,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 81,
+            "start": 15,
+            "length": 1,
+            "velocity": 80
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Arp F",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 65,
+            "start": 0,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 1,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 2,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 77,
+            "start": 3,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 65,
+            "start": 4,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 5,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 6,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 77,
+            "start": 7,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 65,
+            "start": 8,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 9,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 10,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 77,
+            "start": 11,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 65,
+            "start": 12,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 69,
+            "start": 13,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 14,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 77,
+            "start": 15,
+            "length": 1,
+            "velocity": 80
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Arp C",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 60,
+            "start": 0,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 64,
+            "start": 1,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 2,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 3,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 60,
+            "start": 4,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 64,
+            "start": 5,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 6,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 7,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 60,
+            "start": 8,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 64,
+            "start": 9,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 10,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 11,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 60,
+            "start": 12,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 64,
+            "start": 13,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 14,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 72,
+            "start": 15,
+            "length": 1,
+            "velocity": 80
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Arp G",
+        "instrument": 2,
+        "notes": [
+          {
+            "pitch": 67,
+            "start": 0,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 71,
+            "start": 1,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 74,
+            "start": 2,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 79,
+            "start": 3,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 4,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 71,
+            "start": 5,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 74,
+            "start": 6,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 79,
+            "start": 7,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 8,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 71,
+            "start": 9,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 74,
+            "start": 10,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 79,
+            "start": 11,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 67,
+            "start": 12,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 71,
+            "start": 13,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 74,
+            "start": 14,
+            "length": 1,
+            "velocity": 80
+          },
+          {
+            "pitch": 79,
+            "start": 15,
+            "length": 1,
+            "velocity": 80
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Bass Am",
+        "instrument": 3,
+        "notes": [
+          {
+            "pitch": 45,
+            "start": 0,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 45,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 57,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 45,
+            "start": 8,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 52,
+            "start": 12,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 45,
+            "start": 14,
+            "length": 2,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Bass F",
+        "instrument": 3,
+        "notes": [
+          {
+            "pitch": 41,
+            "start": 0,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 41,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 53,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 41,
+            "start": 8,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 48,
+            "start": 12,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 41,
+            "start": 14,
+            "length": 2,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Bass C",
+        "instrument": 3,
+        "notes": [
+          {
+            "pitch": 48,
+            "start": 0,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 48,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 60,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 48,
+            "start": 8,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 55,
+            "start": 12,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 48,
+            "start": 14,
+            "length": 2,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Bass G",
+        "instrument": 3,
+        "notes": [
+          {
+            "pitch": 43,
+            "start": 0,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 43,
+            "start": 4,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 55,
+            "start": 6,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 43,
+            "start": 8,
+            "length": 3,
+            "velocity": 110
+          },
+          {
+            "pitch": 50,
+            "start": 12,
+            "length": 2,
+            "velocity": 110
+          },
+          {
+            "pitch": 43,
+            "start": 14,
+            "length": 2,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Beat",
+        "instrument": 4,
+        "notes": [
+          {
+            "pitch": 48,
+            "start": 0,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 108,
+            "start": 2,
+            "length": 1,
+            "velocity": 55
+          },
+          {
+            "pitch": 81,
+            "start": 4,
+            "length": 2,
+            "velocity": 100
+          },
+          {
+            "pitch": 108,
+            "start": 6,
+            "length": 1,
+            "velocity": 55
+          },
+          {
+            "pitch": 48,
+            "start": 8,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 48,
+            "start": 10,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 81,
+            "start": 12,
+            "length": 2,
+            "velocity": 100
+          },
+          {
+            "pitch": 108,
+            "start": 14,
+            "length": 1,
+            "velocity": 55
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Fill",
+        "instrument": 4,
+        "notes": [
+          {
+            "pitch": 48,
+            "start": 0,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 108,
+            "start": 2,
+            "length": 1,
+            "velocity": 55
+          },
+          {
+            "pitch": 81,
+            "start": 4,
+            "length": 2,
+            "velocity": 100
+          },
+          {
+            "pitch": 48,
+            "start": 8,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 81,
+            "start": 10,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 81,
+            "start": 12,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 81,
+            "start": 13,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 81,
+            "start": 14,
+            "length": 1,
+            "velocity": 100
+          },
+          {
+            "pitch": 81,
+            "start": 15,
+            "length": 1,
+            "velocity": 100
+          }
+        ]
+      }
+    ],
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Pulse 1 - Melody",
+        "volume": 90,
+        "clips": [
+          {
+            "bar": 0,
+            "pattern": 1
+          },
+          {
+            "bar": 1,
+            "pattern": 2
+          },
+          {
+            "bar": 2,
+            "pattern": 3
+          },
+          {
+            "bar": 3,
+            "pattern": 4
+          },
+          {
+            "bar": 4,
+            "pattern": 5
+          },
+          {
+            "bar": 5,
+            "pattern": 6
+          },
+          {
+            "bar": 6,
+            "pattern": 7
+          },
+          {
+            "bar": 7,
+            "pattern": 8
+          }
+        ],
+        "muted": false
+      },
+      {
+        "id": 2,
+        "name": "Pulse 2 - Arpeggio",
+        "volume": 80,
+        "clips": [
+          {
+            "bar": 0,
+            "pattern": 9
+          },
+          {
+            "bar": 1,
+            "pattern": 10
+          },
+          {
+            "bar": 2,
+            "pattern": 11
+          },
+          {
+            "bar": 3,
+            "pattern": 12
+          },
+          {
+            "bar": 4,
+            "pattern": 9
+          },
+          {
+            "bar": 5,
+            "pattern": 10
+          },
+          {
+            "bar": 6,
+            "pattern": 11
+          },
+          {
+            "bar": 7,
+            "pattern": 12
+          }
+        ],
+        "muted": false
+      },
+      {
+        "id": 3,
+        "name": "Triangle - Bass",
+        "volume": 100,
+        "clips": [
+          {
+            "bar": 0,
+            "pattern": 13
+          },
+          {
+            "bar": 1,
+            "pattern": 14
+          },
+          {
+            "bar": 2,
+            "pattern": 15
+          },
+          {
+            "bar": 3,
+            "pattern": 16
+          },
+          {
+            "bar": 4,
+            "pattern": 13
+          },
+          {
+            "bar": 5,
+            "pattern": 14
+          },
+          {
+            "bar": 6,
+            "pattern": 15
+          },
+          {
+            "bar": 7,
+            "pattern": 16
+          }
+        ],
+        "muted": false
+      },
+      {
+        "id": 4,
+        "name": "Noise - Drums",
+        "volume": 85,
+        "clips": [
+          {
+            "bar": 0,
+            "pattern": 17
+          },
+          {
+            "bar": 1,
+            "pattern": 17
+          },
+          {
+            "bar": 2,
+            "pattern": 17
+          },
+          {
+            "bar": 3,
+            "pattern": 17
+          },
+          {
+            "bar": 4,
+            "pattern": 17
+          },
+          {
+            "bar": 5,
+            "pattern": 17
+          },
+          {
+            "bar": 6,
+            "pattern": 17
+          },
+          {
+            "bar": 7,
+            "pattern": 18
+          }
+        ],
+        "muted": false
+      }
+    ],
+    "loop_range": {
+      "start": 0,
+      "end": 8
+    }
+  }
+}

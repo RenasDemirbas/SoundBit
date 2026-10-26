@@ -1,0 +1,42 @@
+{
+  "format": "soundbit-project",
+  "format_version": 1,
+  "song": {
+    "meta": { "title": "Two Voices", "author": "SoundBit contributors", "description": "Format 1 fixture." },
+    "timing": { "bpm": 128, "steps_per_beat": 4, "beats_per_bar": 4, "swing": 0 },
+    "scale": { "root": 0, "kind": "major" },
+    "chip_profile": "free",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "Lead",
+        "voice": { "type": "pulse", "duty": "quarter" },
+        "envelope": { "attack": 2, "decay": 120, "sustain": 70, "release": 80 },
+        "volume": 80,
+        "pan": 0
+      },
+      {
+        "id": 2,
+        "name": "Bell",
+        "voice": { "type": "fm", "algorithm": 4, "feedback": 2 },
+        "volume": 60,
+        "pan": -20
+      }
+    ],
+    "patterns": [
+      {
+        "id": 1,
+        "name": "Riff",
+        "instrument": 1,
+        "notes": [
+          { "pitch": 72, "start": 0, "length": 2, "velocity": 100 },
+          { "pitch": 76, "start": 4, "length": 2, "velocity": 90 }
+        ]
+      }
+    ],
+    "tracks": [
+      { "id": 1, "name": "Lead", "muted": false, "volume": 80, "clips": [{ "bar": 0, "pattern": 1 }] }
+    ],
+    "loop_range": null
+  }
+}

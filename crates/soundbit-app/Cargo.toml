@@ -1,0 +1,19 @@
+[package]
+name = "soundbit-app"
+description = "Application layer: commands, queries, undo/redo history and sessions."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+soundbit-core.workspace = true
+soundbit-engine.workspace = true
+soundbit-formats.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

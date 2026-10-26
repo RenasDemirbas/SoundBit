@@ -1,0 +1,7 @@
+# Function limits from CONTRIBUTING.md ("Code quality").
+too-many-lines-threshold = 80
+too-many-arguments-threshold = 7
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+# ".." keeps the default list.
+doc-valid-idents = ["SoundBit", "PolyBLEP", ".."]

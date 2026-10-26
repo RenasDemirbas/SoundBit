@@ -1,0 +1,346 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit contributors: original sound design, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "strings_ensemble",
+      "category": "strings",
+      "description": "Sustained string section: detuned saws through a soft low-pass with slow attack and late vibrato. Chords and long notes, octaves 3-5.",
+      "instrument": {
+        "name": "Strings",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 140,
+          "decay": 300,
+          "sustain": 85,
+          "release": 380
+        },
+        "vibrato": {
+          "depth": 12,
+          "rate": 52,
+          "delay": 260
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 14
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 3200,
+          "resonance": 10,
+          "envelope_depth": 0
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 40
+      }
+    },
+    {
+      "id": "strings_staccato",
+      "category": "strings",
+      "description": "Short, bowed string ostinato for driving rhythms. Sixteenth notes, octaves 3-5.",
+      "instrument": {
+        "name": "Staccato Strings",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 4,
+          "decay": 120,
+          "sustain": 20,
+          "release": 70
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 10
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 2600,
+          "resonance": 15,
+          "envelope_depth": 18
+        },
+        "volume": 50,
+        "pan": 0,
+        "reverb_send": 25
+      }
+    },
+    {
+      "id": "pizzicato",
+      "category": "strings",
+      "description": "Plucked strings: a soft triangle pluck with a short decay. Melodies and arpeggios, octaves 4-6.",
+      "instrument": {
+        "name": "Pizzicato",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 180,
+          "sustain": 0,
+          "release": 90
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 8
+        },
+        "volume": 70,
+        "pan": 0,
+        "reverb_send": 35
+      }
+    },
+    {
+      "id": "choir_pad",
+      "category": "choir",
+      "description": "Airy 'aah' choir: four detuned triangles under a dark filter with a slow swell. Whole-note chords, octaves 4-5.",
+      "instrument": {
+        "name": "Choir",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 450,
+          "decay": 500,
+          "sustain": 80,
+          "release": 800
+        },
+        "vibrato": {
+          "depth": 10,
+          "rate": 48,
+          "delay": 400
+        },
+        "unison": {
+          "voices": 4,
+          "detune": 18
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1800,
+          "resonance": 20,
+          "envelope_depth": 0
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 55
+      }
+    },
+    {
+      "id": "brass_section",
+      "category": "brass",
+      "description": "Bold FM brass with a slightly slow attack and late vibrato. Heroic melodies and fanfares, octaves 4-5.",
+      "instrument": {
+        "name": "Brass",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 5,
+          "operators": [
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 30,
+              "attack_rate": 24,
+              "decay_rate": 6,
+              "sustain_rate": 0,
+              "sustain_level": 3,
+              "release_rate": 7
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 4,
+              "attack_rate": 24,
+              "decay_rate": 3,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 7
+            },
+            {
+              "multiple": 1,
+              "detune": 2,
+              "total_level": 36,
+              "attack_rate": 22,
+              "decay_rate": 6,
+              "sustain_rate": 0,
+              "sustain_level": 4,
+              "release_rate": 7
+            },
+            {
+              "multiple": 1,
+              "detune": -2,
+              "total_level": 10,
+              "attack_rate": 24,
+              "decay_rate": 3,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 7
+            }
+          ]
+        },
+        "vibrato": {
+          "depth": 14,
+          "rate": 55,
+          "delay": 220
+        },
+        "volume": 72,
+        "pan": 0,
+        "reverb_send": 30
+      }
+    },
+    {
+      "id": "french_horn",
+      "category": "brass",
+      "description": "Round, mellow horn section for chords and counter-melodies. Octaves 3-4.",
+      "instrument": {
+        "name": "Horns",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 3,
+          "operators": [
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 40,
+              "attack_rate": 20,
+              "decay_rate": 4,
+              "sustain_rate": 0,
+              "sustain_level": 3,
+              "release_rate": 6
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 8,
+              "attack_rate": 20,
+              "decay_rate": 2,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 6
+            },
+            {
+              "multiple": 1,
+              "detune": 1,
+              "total_level": 44,
+              "attack_rate": 20,
+              "decay_rate": 4,
+              "sustain_rate": 0,
+              "sustain_level": 4,
+              "release_rate": 6
+            },
+            {
+              "multiple": 1,
+              "detune": -1,
+              "total_level": 12,
+              "attack_rate": 20,
+              "decay_rate": 2,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 6
+            }
+          ]
+        },
+        "vibrato": {
+          "depth": 8,
+          "rate": 50,
+          "delay": 300
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1600,
+          "resonance": 0,
+          "envelope_depth": 0
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 40
+      }
+    },
+    {
+      "id": "flute",
+      "category": "woodwinds",
+      "description": "Breathy flute: a sine with a gentle attack and expressive vibrato. Melodies, octaves 5-6.",
+      "instrument": {
+        "name": "Flute",
+        "voice": {
+          "type": "sine"
+        },
+        "envelope": {
+          "attack": 60,
+          "decay": 200,
+          "sustain": 80,
+          "release": 150
+        },
+        "vibrato": {
+          "depth": 18,
+          "rate": 55,
+          "delay": 180
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 40
+      }
+    },
+    {
+      "id": "timpani",
+      "category": "percussion",
+      "description": "Orchestral timpani: a sine whose pitch settles quickly after the stroke. Play the chord root, octave 2.",
+      "instrument": {
+        "name": "Timpani",
+        "voice": {
+          "type": "sine"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 700,
+          "sustain": 0,
+          "release": 200
+        },
+        "pitch_envelope": {
+          "semitones": 5,
+          "time": 90
+        },
+        "volume": 90,
+        "pan": 0,
+        "reverb_send": 35
+      }
+    },
+    {
+      "id": "orchestra_hit",
+      "category": "percussion",
+      "description": "Stab of a whole orchestra: a wide, bright saw cluster that drops into the note. Short chords, octaves 3-5.",
+      "instrument": {
+        "name": "Orchestra Hit",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 260,
+          "sustain": 0,
+          "release": 120
+        },
+        "pitch_envelope": {
+          "semitones": 3,
+          "time": 40
+        },
+        "unison": {
+          "voices": 4,
+          "detune": 30
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 900,
+          "resonance": 20,
+          "envelope_depth": 48
+        },
+        "volume": 60,
+        "pan": 0,
+        "reverb_send": 50
+      }
+    }
+  ]
+}

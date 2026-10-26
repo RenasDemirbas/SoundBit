@@ -1,0 +1,21 @@
+name: Feature request
+description: A new sound, effect, editor feature, chip profile or MCP tool.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: What do you want to make?
+      description: Describe the music or the result you are after, not only the feature you imagine.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: What happens today
+      description: What you have to do instead, or where you or your agent get stuck.
+  - type: input
+    id: reference
+    attributes:
+      label: Reference (if any)
+      placeholder: e.g. a chip's documentation, a tracker that does it, a song that uses the sound

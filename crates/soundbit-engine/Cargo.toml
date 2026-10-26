@@ -1,0 +1,16 @@
+[package]
+name = "soundbit-engine"
+description = "Sequencer, voice allocation, mixer and deterministic offline renderer."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+rtrb.workspace = true
+soundbit-core.workspace = true
+soundbit-dsp.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

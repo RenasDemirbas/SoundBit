@@ -1,0 +1,2172 @@
+---
+source: crates/soundbit-mcp/tests/protocol.rs
+assertion_line: 349
+expression: summary
+---
+[
+  {
+    "annotations": null,
+    "description": "Clears one or more bars of a track.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "bars": {
+          "description": "Explicit bars, counted from 0.",
+          "items": {
+            "format": "uint16",
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "count": {
+          "description": "Number of consecutive bars starting at `start_bar`. Defaults to 1.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "start_bar": {
+          "description": "First bar of a run of consecutive bars.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "track_id": {
+          "description": "Track to clear.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_id"
+      ],
+      "type": "object"
+    },
+    "name": "arrangement_clear"
+  },
+  {
+    "annotations": null,
+    "description": "Places a pattern on a track at one or more bars, replacing what was there. Example: start_bar 0, count 8 repeats it for eight bars.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "bars": {
+          "description": "Explicit bars, counted from 0, e.g. [0, 2, 4].",
+          "items": {
+            "format": "uint16",
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "count": {
+          "description": "Number of consecutive bars starting at `start_bar`. Defaults to 1.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "pattern_id": {
+          "description": "Pattern to place.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "start_bar": {
+          "description": "First bar of a run of consecutive bars.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "track_id": {
+          "description": "Track to place on.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_id",
+        "pattern_id"
+      ],
+      "type": "object"
+    },
+    "name": "arrangement_place"
+  },
+  {
+    "annotations": null,
+    "description": "Places many patterns at once, e.g. a whole arrangement, as one undo step. Each placement is like arrangement_place. If any placement is invalid, nothing changes. Returns the arrangement grid.",
+    "input_schema": {
+      "$defs": {
+        "PlacementInput": {
+          "description": "One pattern placement inside `arrangement_place_many`. Give either `bars` or `start_bar`\n(+ `count`).",
+          "properties": {
+            "bars": {
+              "description": "Explicit bars, counted from 0.",
+              "items": {
+                "format": "uint16",
+                "maximum": 65535,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "count": {
+              "description": "Number of consecutive bars starting at `start_bar`. Defaults to 1.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "pattern_id": {
+              "description": "Pattern to place.",
+              "format": "uint32",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "start_bar": {
+              "description": "First bar of a run of consecutive bars.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "track_id": {
+              "description": "Track to place on.",
+              "format": "uint32",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "track_id",
+            "pattern_id"
+          ],
+          "type": "object"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "placements": {
+          "description": "The placements, at most 512. Later ones replace earlier ones in the same bar.",
+          "items": {
+            "$ref": "#/$defs/PlacementInput"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "placements"
+      ],
+      "type": "object"
+    },
+    "name": "arrangement_place_many"
+  },
+  {
+    "annotations": null,
+    "description": "Renders the song to a 16-bit stereo WAV file in the workspace so the user can listen to it. Rendering is deterministic. Reports the peak and RMS level of the mix and of every track, so you can balance the mix without hearing it.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "path": {
+          "description": "Path relative to the workspace, e.g. `renders/theme.wav`.",
+          "type": "string"
+        },
+        "sample_rate": {
+          "description": "Sample rate in hertz, 8000-192000. Defaults to 48000.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "type": "object"
+    },
+    "name": "export_wav"
+  },
+  {
+    "annotations": {
+      "readOnlyHint": true
+    },
+    "description": "Lists SoundBit project files (.sbproj) in the workspace.",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "name": "files_list"
+  },
+  {
+    "annotations": null,
+    "description": "Redoes the most recently undone change and returns what was redone.",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "name": "history_redo"
+  },
+  {
+    "annotations": null,
+    "description": "Undoes the most recent change (yours or the user's) and returns what was undone.",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "name": "history_undo"
+  },
+  {
+    "annotations": null,
+    "description": "Adds an instrument: a voice (pulse, triangle, sawtooth, sine, noise, wavetable or fm) with envelope, optional sound shaping (pitch envelope, vibrato, unison, filter), volume, pan and reverb send. Returns its id. See reference_get for voice parameters; instrument_add_preset is quicker for common sounds.",
+    "input_schema": {
+      "$defs": {
+        "DutyCycle": {
+          "enum": [
+            "eighth",
+            "quarter",
+            "half",
+            "three_quarters"
+          ],
+          "type": "string"
+        },
+        "EnvelopeInput": {
+          "description": "Envelope settings. Unset values keep the current (or default) value.",
+          "properties": {
+            "attack_ms": {
+              "description": "Attack time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "decay_ms": {
+              "description": "Decay time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "release_ms": {
+              "description": "Release time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sustain_percent": {
+              "description": "Sustain level in percent, 0-100.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "FilterInput": {
+          "description": "A resonant filter on every note. A low-pass softens bright waves (saw, pulse) into strings,\npads and basses; an envelope depth makes the tone open as each note starts.",
+          "properties": {
+            "cutoff_hz": {
+              "description": "Cutoff frequency in hertz, 20-20000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "envelope_semitones": {
+              "description": "How far the amplitude envelope moves the cutoff, in semitones at full level, -72 to 72.",
+              "format": "int8",
+              "maximum": 127,
+              "minimum": -128,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "mode": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/FilterMode"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter type; \"off\" bypasses the filter."
+            },
+            "resonance_percent": {
+              "description": "Emphasis around the cutoff in percent, 0-100; above 70 it whistles.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "FilterMode": {
+          "enum": [
+            "off",
+            "low_pass",
+            "high_pass",
+            "band_pass"
+          ],
+          "type": "string"
+        },
+        "FmOperatorInput": {
+          "description": "One FM operator. Unset values keep the defaults (full level, instant attack, no decay).",
+          "properties": {
+            "attack_rate": {
+              "description": "Attack rate 0-31; 31 is instant.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "decay_rate": {
+              "description": "First decay rate 0-31.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "detune": {
+              "description": "Fine detune -3 to 3.",
+              "format": "int8",
+              "maximum": 127,
+              "minimum": -128,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "multiple": {
+              "description": "Frequency multiplier 0-15 (0 means x0.5).",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "release_rate": {
+              "description": "Release rate 0-15.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sustain_level": {
+              "description": "Level where the first decay ends, 0-15 (0 is loudest).",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sustain_rate": {
+              "description": "Second decay rate while held, 0-31.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "total_level": {
+              "description": "Attenuation 0-127; 0 is loudest. Modulators set brightness with this.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "NoiseMode": {
+          "enum": [
+            "long",
+            "short"
+          ],
+          "type": "string"
+        },
+        "PitchEnvelopeInput": {
+          "description": "A pitch glide at the start of every note: the note starts `semitones` away and slides to\nits own pitch over `time_ms`. Use it for kicks and toms (+24 to +36 over 40-120 ms),\ntimpani (+3 to +7), lasers and risers.",
+          "properties": {
+            "semitones": {
+              "description": "Start offset in semitones, -48 to 48; positive values fall into the note. 0 turns the\nglide off.",
+              "format": "int8",
+              "maximum": 127,
+              "minimum": -128,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "time_ms": {
+              "description": "Glide time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "UnisonInput": {
+          "description": "Several detuned copies of the voice playing together: turns a thin wave into an ensemble\n(strings, choirs, supersaws). Noise voices ignore it.",
+          "properties": {
+            "detune_cents": {
+              "description": "Detune of the outermost copies in cents either side, 0-50; 8-20 is lush, 25+ is wide.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "voices": {
+              "description": "Number of copies, 1-4. 1 turns unison off.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "VibratoInput": {
+          "description": "A periodic pitch wobble for held notes (strings, flutes, leads).",
+          "properties": {
+            "delay_ms": {
+              "description": "Milliseconds before the vibrato starts, 0-10000; 150-300 sounds like a real player.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "depth_cents": {
+              "description": "Depth in cents either side of the note, 0-100; 10-25 sounds natural. 0 turns vibrato\noff.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "rate_hz": {
+              "description": "Speed in hertz, 0.1-20.0; 5-6 sounds natural.",
+              "format": "float",
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "VoiceInput": {
+          "description": "The sound source of an instrument.",
+          "oneOf": [
+            {
+              "description": "Pulse (square) wave, the NES and Game Boy lead sound.",
+              "properties": {
+                "duty": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/DutyCycle"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Width of the high part of the wave. Defaults to \"half\"."
+                },
+                "type": {
+                  "const": "pulse",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "NES-style stepped triangle wave, typical for basslines.",
+              "properties": {
+                "type": {
+                  "const": "triangle",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Bright sawtooth wave.",
+              "properties": {
+                "type": {
+                  "const": "sawtooth",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Pure sine wave.",
+              "properties": {
+                "type": {
+                  "const": "sine",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Noise for drums. Higher notes sound brighter.",
+              "properties": {
+                "mode": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/NoiseMode"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "\"long\" for hiss, \"short\" for metallic noise. Defaults to \"long\"."
+                },
+                "type": {
+                  "const": "noise",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Custom single-cycle waveform, like the Game Boy wave channel.",
+              "properties": {
+                "samples": {
+                  "description": "Exactly 32 levels, each 0-15.",
+                  "items": {
+                    "format": "uint8",
+                    "maximum": 255,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "type": {
+                  "const": "wavetable",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "samples"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Four-operator FM, like the Sega Genesis. Unset values use a plain sine patch.",
+              "properties": {
+                "algorithm": {
+                  "description": "Operator routing 0-7.",
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "feedback": {
+                  "description": "Operator 1 self-feedback 0-7.",
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "operators": {
+                  "description": "Up to four operators; missing ones are silent.",
+                  "items": {
+                    "$ref": "#/$defs/FmOperatorInput"
+                  },
+                  "type": "array"
+                },
+                "type": {
+                  "const": "fm",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "envelope": {
+          "$ref": "#/$defs/EnvelopeInput",
+          "description": "Amplitude envelope. New instruments default to a short, plucky envelope."
+        },
+        "filter": {
+          "$ref": "#/$defs/FilterInput",
+          "description": "Resonant filter."
+        },
+        "name": {
+          "description": "Display name, e.g. \"Lead\" or \"Kick\".",
+          "type": "string"
+        },
+        "pan": {
+          "description": "Stereo position, -100 (left) to 100 (right).",
+          "format": "int8",
+          "maximum": 127,
+          "minimum": -128,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "pitch_envelope": {
+          "$ref": "#/$defs/PitchEnvelopeInput",
+          "description": "Pitch glide at the start of each note."
+        },
+        "reverb_send_percent": {
+          "description": "Share sent to the song's reverb in percent, 0-100; 20-50 places an instrument in a\nroom, 0 keeps it dry (kicks and basses usually stay dry).",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "unison": {
+          "$ref": "#/$defs/UnisonInput",
+          "description": "Detuned copies of the voice."
+        },
+        "vibrato": {
+          "$ref": "#/$defs/VibratoInput",
+          "description": "Pitch wobble for held notes."
+        },
+        "voice": {
+          "$ref": "#/$defs/VoiceInput",
+          "description": "Sound source."
+        },
+        "volume": {
+          "description": "Volume in percent, 0-100.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "voice"
+      ],
+      "type": "object"
+    },
+    "name": "instrument_add"
+  },
+  {
+    "annotations": null,
+    "description": "Adds a ready-made instrument from the preset library (strings, brass, choir, timpani, drums, chip leads, FM keys...). Returns its id and full settings, which instrument_update can tweak. List presets with preset_list.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "name": {
+          "description": "Display name; defaults to the preset's name.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "preset": {
+          "description": "Preset id from `preset_list`, e.g. `strings_ensemble` or `kick`.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "preset"
+      ],
+      "type": "object"
+    },
+    "name": "instrument_add_preset"
+  },
+  {
+    "annotations": {
+      "destructiveHint": true
+    },
+    "description": "Removes an instrument. Fails while a pattern still uses it; change or remove those patterns first.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Instrument id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "instrument_remove"
+  },
+  {
+    "annotations": null,
+    "description": "Changes an instrument's name, voice, envelope, sound shaping, volume, pan or reverb send. Only the given fields change, also inside groups such as vibrato or filter.",
+    "input_schema": {
+      "$defs": {
+        "DutyCycle": {
+          "enum": [
+            "eighth",
+            "quarter",
+            "half",
+            "three_quarters"
+          ],
+          "type": "string"
+        },
+        "EnvelopeInput": {
+          "description": "Envelope settings. Unset values keep the current (or default) value.",
+          "properties": {
+            "attack_ms": {
+              "description": "Attack time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "decay_ms": {
+              "description": "Decay time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "release_ms": {
+              "description": "Release time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sustain_percent": {
+              "description": "Sustain level in percent, 0-100.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "FilterInput": {
+          "description": "A resonant filter on every note. A low-pass softens bright waves (saw, pulse) into strings,\npads and basses; an envelope depth makes the tone open as each note starts.",
+          "properties": {
+            "cutoff_hz": {
+              "description": "Cutoff frequency in hertz, 20-20000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "envelope_semitones": {
+              "description": "How far the amplitude envelope moves the cutoff, in semitones at full level, -72 to 72.",
+              "format": "int8",
+              "maximum": 127,
+              "minimum": -128,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "mode": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/FilterMode"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter type; \"off\" bypasses the filter."
+            },
+            "resonance_percent": {
+              "description": "Emphasis around the cutoff in percent, 0-100; above 70 it whistles.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "FilterMode": {
+          "enum": [
+            "off",
+            "low_pass",
+            "high_pass",
+            "band_pass"
+          ],
+          "type": "string"
+        },
+        "FmOperatorInput": {
+          "description": "One FM operator. Unset values keep the defaults (full level, instant attack, no decay).",
+          "properties": {
+            "attack_rate": {
+              "description": "Attack rate 0-31; 31 is instant.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "decay_rate": {
+              "description": "First decay rate 0-31.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "detune": {
+              "description": "Fine detune -3 to 3.",
+              "format": "int8",
+              "maximum": 127,
+              "minimum": -128,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "multiple": {
+              "description": "Frequency multiplier 0-15 (0 means x0.5).",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "release_rate": {
+              "description": "Release rate 0-15.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sustain_level": {
+              "description": "Level where the first decay ends, 0-15 (0 is loudest).",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sustain_rate": {
+              "description": "Second decay rate while held, 0-31.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "total_level": {
+              "description": "Attenuation 0-127; 0 is loudest. Modulators set brightness with this.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "NoiseMode": {
+          "enum": [
+            "long",
+            "short"
+          ],
+          "type": "string"
+        },
+        "PitchEnvelopeInput": {
+          "description": "A pitch glide at the start of every note: the note starts `semitones` away and slides to\nits own pitch over `time_ms`. Use it for kicks and toms (+24 to +36 over 40-120 ms),\ntimpani (+3 to +7), lasers and risers.",
+          "properties": {
+            "semitones": {
+              "description": "Start offset in semitones, -48 to 48; positive values fall into the note. 0 turns the\nglide off.",
+              "format": "int8",
+              "maximum": 127,
+              "minimum": -128,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "time_ms": {
+              "description": "Glide time in milliseconds, 0-10000.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "UnisonInput": {
+          "description": "Several detuned copies of the voice playing together: turns a thin wave into an ensemble\n(strings, choirs, supersaws). Noise voices ignore it.",
+          "properties": {
+            "detune_cents": {
+              "description": "Detune of the outermost copies in cents either side, 0-50; 8-20 is lush, 25+ is wide.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "voices": {
+              "description": "Number of copies, 1-4. 1 turns unison off.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "VibratoInput": {
+          "description": "A periodic pitch wobble for held notes (strings, flutes, leads).",
+          "properties": {
+            "delay_ms": {
+              "description": "Milliseconds before the vibrato starts, 0-10000; 150-300 sounds like a real player.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "depth_cents": {
+              "description": "Depth in cents either side of the note, 0-100; 10-25 sounds natural. 0 turns vibrato\noff.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "rate_hz": {
+              "description": "Speed in hertz, 0.1-20.0; 5-6 sounds natural.",
+              "format": "float",
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "VoiceInput": {
+          "description": "The sound source of an instrument.",
+          "oneOf": [
+            {
+              "description": "Pulse (square) wave, the NES and Game Boy lead sound.",
+              "properties": {
+                "duty": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/DutyCycle"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Width of the high part of the wave. Defaults to \"half\"."
+                },
+                "type": {
+                  "const": "pulse",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "NES-style stepped triangle wave, typical for basslines.",
+              "properties": {
+                "type": {
+                  "const": "triangle",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Bright sawtooth wave.",
+              "properties": {
+                "type": {
+                  "const": "sawtooth",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Pure sine wave.",
+              "properties": {
+                "type": {
+                  "const": "sine",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Noise for drums. Higher notes sound brighter.",
+              "properties": {
+                "mode": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/NoiseMode"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "\"long\" for hiss, \"short\" for metallic noise. Defaults to \"long\"."
+                },
+                "type": {
+                  "const": "noise",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Custom single-cycle waveform, like the Game Boy wave channel.",
+              "properties": {
+                "samples": {
+                  "description": "Exactly 32 levels, each 0-15.",
+                  "items": {
+                    "format": "uint8",
+                    "maximum": 255,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "type": {
+                  "const": "wavetable",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "samples"
+              ],
+              "type": "object"
+            },
+            {
+              "description": "Four-operator FM, like the Sega Genesis. Unset values use a plain sine patch.",
+              "properties": {
+                "algorithm": {
+                  "description": "Operator routing 0-7.",
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "feedback": {
+                  "description": "Operator 1 self-feedback 0-7.",
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "operators": {
+                  "description": "Up to four operators; missing ones are silent.",
+                  "items": {
+                    "$ref": "#/$defs/FmOperatorInput"
+                  },
+                  "type": "array"
+                },
+                "type": {
+                  "const": "fm",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "envelope": {
+          "$ref": "#/$defs/EnvelopeInput",
+          "description": "Amplitude envelope. New instruments default to a short, plucky envelope."
+        },
+        "filter": {
+          "$ref": "#/$defs/FilterInput",
+          "description": "Resonant filter."
+        },
+        "id": {
+          "description": "Instrument id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "name": {
+          "description": "New name.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pan": {
+          "description": "Stereo position, -100 (left) to 100 (right).",
+          "format": "int8",
+          "maximum": 127,
+          "minimum": -128,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "pitch_envelope": {
+          "$ref": "#/$defs/PitchEnvelopeInput",
+          "description": "Pitch glide at the start of each note."
+        },
+        "reverb_send_percent": {
+          "description": "Share sent to the song's reverb in percent, 0-100; 20-50 places an instrument in a\nroom, 0 keeps it dry (kicks and basses usually stay dry).",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "unison": {
+          "$ref": "#/$defs/UnisonInput",
+          "description": "Detuned copies of the voice."
+        },
+        "vibrato": {
+          "$ref": "#/$defs/VibratoInput",
+          "description": "Pitch wobble for held notes."
+        },
+        "voice": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VoiceInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "New sound source (replaces the whole voice)."
+        },
+        "volume": {
+          "description": "Volume in percent, 0-100.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "instrument_update"
+  },
+  {
+    "annotations": null,
+    "description": "Adds notes to a pattern, keeping the existing ones. Fails if a note overlaps an existing note of the same pitch.",
+    "input_schema": {
+      "$defs": {
+        "NoteInput": {
+          "description": "A note to write into a pattern.",
+          "properties": {
+            "length": {
+              "default": 1,
+              "description": "Duration in steps. Defaults to 1.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "note": {
+              "description": "Note name with octave: \"C4\" is middle C; also \"F#3\", \"Bb5\".",
+              "type": "string"
+            },
+            "start": {
+              "description": "First step of the note, counted from 0.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "velocity": {
+              "description": "MIDI velocity 1-127. Defaults to 100.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "note",
+            "start"
+          ],
+          "type": "object"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "notes": {
+          "description": "The notes.",
+          "items": {
+            "$ref": "#/$defs/NoteInput"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "notes"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_add_notes"
+  },
+  {
+    "annotations": null,
+    "description": "Creates a pattern (one bar of notes for one instrument) and returns it with a tracker grid. Place it on a track with arrangement_place.",
+    "input_schema": {
+      "$defs": {
+        "NoteInput": {
+          "description": "A note to write into a pattern.",
+          "properties": {
+            "length": {
+              "default": 1,
+              "description": "Duration in steps. Defaults to 1.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "note": {
+              "description": "Note name with octave: \"C4\" is middle C; also \"F#3\", \"Bb5\".",
+              "type": "string"
+            },
+            "start": {
+              "description": "First step of the note, counted from 0.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "velocity": {
+              "description": "MIDI velocity 1-127. Defaults to 100.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "note",
+            "start"
+          ],
+          "type": "object"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "instrument_id": {
+          "description": "Instrument that plays the notes.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "name": {
+          "description": "Display name, e.g. \"Verse melody\".",
+          "type": "string"
+        },
+        "notes": {
+          "description": "Notes; may be empty. Notes must fit in one bar (`start + length <= steps_per_bar`).",
+          "items": {
+            "$ref": "#/$defs/NoteInput"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "instrument_id"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_create"
+  },
+  {
+    "annotations": null,
+    "description": "Copies a pattern under a new id, e.g. to make a variation of it.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern to copy.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "name": {
+          "description": "Name of the copy. Defaults to the original name plus \" copy\".",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_duplicate"
+  },
+  {
+    "annotations": {
+      "readOnlyHint": true
+    },
+    "description": "Returns a pattern's notes, a tracker grid (one row per step; note names where notes start, '|' while held, '.' when silent; chords use several columns) and where it is placed.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_get"
+  },
+  {
+    "annotations": {
+      "destructiveHint": true
+    },
+    "description": "Removes a pattern. Fails while it is placed in the arrangement; clear those bars first with arrangement_clear.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_remove"
+  },
+  {
+    "annotations": null,
+    "description": "Removes notes from a pattern, identified by note name and start step.",
+    "input_schema": {
+      "$defs": {
+        "NoteRef": {
+          "description": "Identifies an existing note.",
+          "properties": {
+            "note": {
+              "description": "Note name with octave, e.g. \"C4\".",
+              "type": "string"
+            },
+            "start": {
+              "description": "Start step of the note.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "note",
+            "start"
+          ],
+          "type": "object"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "notes": {
+          "description": "Notes to remove, identified by name and start step.",
+          "items": {
+            "$ref": "#/$defs/NoteRef"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "notes"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_remove_notes"
+  },
+  {
+    "annotations": null,
+    "description": "Replaces ALL notes of a pattern with the given ones. Use it to write or rewrite a whole bar in one call.",
+    "input_schema": {
+      "$defs": {
+        "NoteInput": {
+          "description": "A note to write into a pattern.",
+          "properties": {
+            "length": {
+              "default": 1,
+              "description": "Duration in steps. Defaults to 1.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "note": {
+              "description": "Note name with octave: \"C4\" is middle C; also \"F#3\", \"Bb5\".",
+              "type": "string"
+            },
+            "start": {
+              "description": "First step of the note, counted from 0.",
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "velocity": {
+              "description": "MIDI velocity 1-127. Defaults to 100.",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "note",
+            "start"
+          ],
+          "type": "object"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "notes": {
+          "description": "The notes.",
+          "items": {
+            "$ref": "#/$defs/NoteInput"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "notes"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_set_notes"
+  },
+  {
+    "annotations": null,
+    "description": "Moves every note of a pattern up or down by a number of semitones.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "semitones": {
+          "description": "Semitones to move every note by; negative moves down, 12 is one octave.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "semitones"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_transpose"
+  },
+  {
+    "annotations": null,
+    "description": "Renames a pattern or changes the instrument that plays it.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Pattern id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "instrument_id": {
+          "description": "New instrument.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "name": {
+          "description": "New name.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "pattern_update"
+  },
+  {
+    "annotations": {
+      "readOnlyHint": true
+    },
+    "description": "Lists the instrument presets: id, name, category, voice type and what each sounds like and suits (including which notes to play drums on). Add one with instrument_add_preset.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "category": {
+          "description": "Only list this category, e.g. \"strings\", \"brass\", \"drums\", \"lead\", \"bass\". Lists\neverything when unset.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "name": "preset_list"
+  },
+  {
+    "annotations": {
+      "readOnlyHint": true
+    },
+    "description": "Explains the song model: note format, every voice type and its parameters, envelope ranges, chip profiles with their channels, scales and size limits. Call it once before composing.",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "name": "reference_get"
+  },
+  {
+    "annotations": {
+      "readOnlyHint": true
+    },
+    "description": "Returns the whole song: settings, instruments, patterns (with note counts), tracks with their clips, an arrangement grid (rows = tracks, columns = bars, cells = pattern ids), chip-profile problems and undo state.",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "name": "song_get"
+  },
+  {
+    "annotations": {
+      "destructiveHint": true
+    },
+    "description": "Replaces the open song with a new, empty one. This clears the undo history. Fails if the current song has unsaved changes unless `discard_unsaved` is true; save it first with song_save.",
+    "input_schema": {
+      "$defs": {
+        "ChipProfile": {
+          "enum": [
+            "free",
+            "nes",
+            "game_boy",
+            "c64",
+            "genesis"
+          ],
+          "type": "string"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "bpm": {
+          "description": "Tempo in beats per minute, 20-400. Defaults to 120.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "chip_profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ChipProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Hardware style; defaults to \"free\"."
+        },
+        "discard_unsaved": {
+          "default": false,
+          "description": "Confirm discarding unsaved changes to the current song.",
+          "type": "boolean"
+        },
+        "title": {
+          "description": "Song title.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "type": "object"
+    },
+    "name": "song_new"
+  },
+  {
+    "annotations": {
+      "destructiveHint": true
+    },
+    "description": "Opens a project file from the workspace, replacing the open song and clearing the undo history. Fails if the current song has unsaved changes unless `discard_unsaved` is true.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "discard_unsaved": {
+          "default": false,
+          "description": "Confirm discarding unsaved changes to the current song.",
+          "type": "boolean"
+        },
+        "path": {
+          "description": "Path relative to the workspace (see `files_list`).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "type": "object"
+    },
+    "name": "song_open"
+  },
+  {
+    "annotations": null,
+    "description": "Saves the song as a project file in the workspace.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "path": {
+          "description": "Path relative to the workspace, e.g. `songs/theme.sbproj`. Defaults to the file the song\nwas opened from or last saved to.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "name": "song_save"
+  },
+  {
+    "annotations": null,
+    "description": "Changes song-wide settings: title, author, tempo, grid, swing, key and scale, chip profile, loop region or reverb room. Only the given fields change; all changes are one undo step.",
+    "input_schema": {
+      "$defs": {
+        "ChipProfile": {
+          "enum": [
+            "free",
+            "nes",
+            "game_boy",
+            "c64",
+            "genesis"
+          ],
+          "type": "string"
+        },
+        "ScaleKind": {
+          "enum": [
+            "chromatic",
+            "major",
+            "natural_minor",
+            "harmonic_minor",
+            "melodic_minor",
+            "dorian",
+            "phrygian",
+            "lydian",
+            "mixolydian",
+            "locrian",
+            "major_pentatonic",
+            "minor_pentatonic",
+            "blues",
+            "whole_tone"
+          ],
+          "type": "string"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "author": {
+          "description": "Author or artist.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "beats_per_bar": {
+          "description": "Beats per bar, 1-16. Fails if existing notes would no longer fit in a bar.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "bpm": {
+          "description": "Tempo in beats per minute, 20-400.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "chip_profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ChipProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Hardware style that limits tracks and voices; \"free\" removes limits."
+        },
+        "clear_loop": {
+          "default": false,
+          "description": "Remove the loop region.",
+          "type": "boolean"
+        },
+        "description": {
+          "description": "Free-form description.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "loop_end": {
+          "description": "Bar after the last looped bar.",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "loop_start": {
+          "description": "First bar of the loop region (set together with `loop_end`).",
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "reverb_damping": {
+          "description": "Reverb high-frequency damping in percent, 0-100: low is bright stone, high is soft.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "reverb_size": {
+          "description": "Size of the shared reverb room in percent, 0-100: 20 is a small room, 60 a hall, 90+ a\ncathedral. Instruments join the room through their `reverb_send_percent`.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "scale_kind": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScaleKind"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Scale kind."
+        },
+        "scale_root": {
+          "description": "Key root, e.g. \"A\", \"F#\", \"Bb\".",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "steps_per_beat": {
+          "description": "Grid resolution: steps per beat, 1-16 (4 = sixteenth notes). Fails if existing notes\nwould no longer fit in a bar.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "swing": {
+          "description": "Swing in percent, 0-100.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "title": {
+          "description": "Song title.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "name": "song_update"
+  },
+  {
+    "annotations": null,
+    "description": "Adds an empty track at the end. With a chip profile, track N plays on the profile's channel N (see reference_get).",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "muted": {
+          "default": false,
+          "description": "Start muted.",
+          "type": "boolean"
+        },
+        "name": {
+          "description": "Display name, e.g. \"Bass\".",
+          "type": "string"
+        },
+        "volume": {
+          "description": "Volume in percent, 0-100. Defaults to 80.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "name": "track_add"
+  },
+  {
+    "annotations": {
+      "destructiveHint": true
+    },
+    "description": "Removes a track together with its clips. Later tracks move up one chip-profile channel.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Track id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "track_remove"
+  },
+  {
+    "annotations": null,
+    "description": "Renames, mutes/unmutes or changes the volume of a track.",
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "properties": {
+        "id": {
+          "description": "Track id.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "muted": {
+          "description": "Mute or unmute.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "name": {
+          "description": "New name.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "volume": {
+          "description": "Volume in percent, 0-100.",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "track_update"
+  }
+]

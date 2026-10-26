@@ -1,0 +1,39 @@
+name: Bug report
+description: Something sounds wrong, crashes, or an MCP tool does the wrong thing.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did (in the editor, the CLI, or through an MCP tool) and what went wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Steps, or the MCP tool call with its arguments. Attach the `.sbproj` file if a song is involved (zip it first).
+  - type: input
+    id: version
+    attributes:
+      label: SoundBit version and OS
+      placeholder: 0.1.0 on Ubuntu 24.04 (PipeWire)
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: MCP client (if any)
+      placeholder: The MCP client and model you used
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Terminal output of the app or `soundbit`, or a screenshot of the editor.

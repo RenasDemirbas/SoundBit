@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security problem
+    url: https://github.com/RenasDemirbas/SoundBit/security/advisories/new
+    about: Report vulnerabilities privately, not as a public issue.
+  - name: Documentation
+    url: https://github.com/RenasDemirbas/SoundBit/wiki
+    about: Guides for the editor, sound design, chip profiles and the MCP tools.

@@ -1,0 +1,265 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit contributors: original sound design, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "pulse_lead",
+      "category": "lead",
+      "description": "Classic NES lead: 25 % pulse with delayed vibrato. Melodies, octaves 4-6.",
+      "instrument": {
+        "name": "Lead",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 120,
+          "sustain": 70,
+          "release": 80
+        },
+        "vibrato": {
+          "depth": 20,
+          "rate": 60,
+          "delay": 200
+        },
+        "volume": 80,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "pulse_harmony",
+      "category": "lead",
+      "description": "Thin 12.5 % pulse for harmonies under a lead. Octaves 4-5.",
+      "instrument": {
+        "name": "Harmony",
+        "voice": {
+          "type": "pulse",
+          "duty": "eighth"
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 140,
+          "sustain": 60,
+          "release": 80
+        },
+        "volume": 60,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "square_pluck",
+      "category": "lead",
+      "description": "Hollow square pluck for arpeggios. Octaves 4-6.",
+      "instrument": {
+        "name": "Square Pluck",
+        "voice": {
+          "type": "pulse",
+          "duty": "half"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 140,
+          "sustain": 0,
+          "release": 60
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "triangle_bass",
+      "category": "bass",
+      "description": "NES triangle bass. Octaves 2-3.",
+      "instrument": {
+        "name": "Triangle Bass",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 80,
+          "sustain": 90,
+          "release": 40
+        },
+        "volume": 90,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "supersaw_lead",
+      "category": "lead",
+      "description": "Wide, modern supersaw lead with a filter that opens on every note. Octaves 4-5.",
+      "instrument": {
+        "name": "Supersaw",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 3,
+          "decay": 300,
+          "sustain": 70,
+          "release": 200
+        },
+        "vibrato": {
+          "depth": 10,
+          "rate": 55,
+          "delay": 300
+        },
+        "unison": {
+          "voices": 4,
+          "detune": 25
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1200,
+          "resonance": 30,
+          "envelope_depth": 36
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 25
+      }
+    },
+    {
+      "id": "acid_bass",
+      "category": "bass",
+      "description": "Squelchy resonant saw bass with a snappy filter envelope. Octaves 1-3.",
+      "instrument": {
+        "name": "Acid Bass",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 220,
+          "sustain": 40,
+          "release": 60
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 300,
+          "resonance": 75,
+          "envelope_depth": 40
+        },
+        "volume": 70,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "gameboy_wave",
+      "category": "lead",
+      "description": "Game Boy wave channel with a soft, rounded timbre. Octaves 3-5.",
+      "instrument": {
+        "name": "Wave",
+        "voice": {
+          "type": "wavetable",
+          "samples": [
+            8,
+            10,
+            12,
+            13,
+            14,
+            15,
+            15,
+            15,
+            14,
+            13,
+            12,
+            10,
+            8,
+            6,
+            4,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 160,
+          "sustain": 70,
+          "release": 100
+        },
+        "volume": 80,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "laser",
+      "category": "fx",
+      "description": "Falling laser zap. Play any note around C6.",
+      "instrument": {
+        "name": "Laser",
+        "voice": {
+          "type": "pulse",
+          "duty": "half"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 220,
+          "sustain": 0,
+          "release": 40
+        },
+        "pitch_envelope": {
+          "semitones": 36,
+          "time": 220
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "power_up",
+      "category": "fx",
+      "description": "Rising power-up sweep. Play around C5.",
+      "instrument": {
+        "name": "Power Up",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 0,
+          "decay": 400,
+          "sustain": 0,
+          "release": 80
+        },
+        "pitch_envelope": {
+          "semitones": -24,
+          "time": 380
+        },
+        "vibrato": {
+          "depth": 30,
+          "rate": 120,
+          "delay": 0
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    }
+  ]
+}
